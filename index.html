@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2bac8a7855.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="location-input">
+        <form id="location-form">
+          <div class="row">
+            <div class="col-7">
+              <input type="search" id="search-term" placeholder="Location" />
+            </div>
+            <div class="col-2 p-0">
+              <input type="submit" class="search-button" value="Search" />
+            </div>
+            <div class="col-3 p-0">
+              <button id="current-button">Current Location</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <div class="heading">
+            <i class="fa-solid fa-location-dot location"></i>
+            <span id="city">Hanoi</span>
+          </div>
+          <div class="time">10:10:00</div>
+          <div class="day">Thursday, March 3, 2022</div>
+          <div class="card-group">
+            <div class="card humidity">
+              <div class="card-body wth-humi">
+                <h5 class="card-title icon">💦</h5>
+                <h6 class="characteristics">humidity</h6>
+                <p class="card-text weather-detail" id="weather-humidity">
+                  90%
+                </p>
+              </div>
+            </div>
+            <div class="card wind-speed">
+              <div class="card-body wth-wind">
+                <h5 class="card-title icon">💨</h5>
+                <h6 class="characteristics">wind</h6>
+                <p class="card-text weather-detail" id="weather-wind-speed">
+                  16 km/h
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="actual-icon">☁️</div>
+          <div class="justification">Cloudy</div>
+          <div class="main-temperature">
+            <span class="actual-temp">21</span>
+            <span class="convert-temp">
+              <a href="#" id="celcius-link">°C</a> |
+              <a href="#" id="fahrenheit-link">°F</a>
+            </span>
+          </div>
+          <h2 class="real-temp-range">
+            <span id="upper-temp">28°</span> |
+            <span id="lower-temp">18°</span>
+          </h2>
+        </div>
+      </div>
+      <div class="row row-cols-5 forecasted-week-day">
+        <div class="col first-day">Fri</div>
+        <div class="col second-day">Sat</div>
+        <div class="col third-day">Sun</div>
+        <div class="col fourth-day">Mon</div>
+        <div class="col fifth-day">Tue</div>
+      </div>
+      <div class="row row-cols-5 forecasted-temp">
+        <div class="col first-day">
+          <div class="weather-icon">⛅</div>
+          <div class="temp-combination">
+            <div class="forecasted-upper-temp">27°</div>
+            <hr />
+            <div class="forecasted-lower-temp">19°</div>
+          </div>
+        </div>
+        <div class="col second-day">
+          <div class="weather-icon">🌧️</div>
+          <div class="temp-combination">
+            <div class="forecasted-upper-temp">25°</div>
+            <hr />
+            <div class="forecasted-lower-temp">20°</div>
+          </div>
+        </div>
+        <div class="col third-day">
+          <div class="weather-icon">🌧️</div>
+          <div class="temp-combination">
+            <div class="forecasted-upper-temp">26°</div>
+            <hr />
+            <div class="forecasted-lower-temp">21°</div>
+          </div>
+        </div>
+        <div class="col fourth-day">
+          <div class="weather-icon">🌧️</div>
+          <div class="temp-combination">
+            <div class="forecasted-upper-temp">24°</div>
+            <hr />
+            <div class="forecasted-lower-temp">18°</div>
+          </div>
+        </div>
+        <div class="col fifth-day">
+          <div class="weather-icon">☀️</div>
+          <div class="temp-combination">
+            <div class="forecasted-upper-temp">26°</div>
+            <hr />
+            <div class="forecasted-lower-temp">15°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

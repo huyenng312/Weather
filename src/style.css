@@ -1,0 +1,195 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: block;
+  margin: 100px auto;
+  padding: 20px 50px;
+  max-width: 700px;
+  border: 3px solid #999999;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#search-term {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+  padding: 15px 0;
+  border: 2px solid #dddddd;
+  border-radius: 4px;
+  height: 25px;
+}
+
+input.search-button,
+#current-button {
+  width: 90%;
+  margin: 20px 0;
+  padding: 3px;
+  text-align: center;
+  background: #cccccc;
+  border: 2px solid #777777;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+}
+
+.search-button:hover {
+  background: transparent;
+}
+
+#current-button:hover {
+  background: transparent;
+}
+
+.heading {
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+.location {
+  text-align: center;
+  color: black;
+  font-size: 40px;
+  margin: 20px auto 10px;
+}
+
+.time,
+.day {
+  text-align: center;
+  margin: 5px auto;
+  font-size: 17px;
+}
+
+.time {
+  color: #aaaaaa;
+}
+
+.day {
+  color: #171717;
+}
+
+.humidity,
+.wind-speed {
+  display: block;
+  padding: 0;
+  background: #f6f6f6;
+  border: 1px solid #aaaaaa;
+  border-radius: 10px;
+}
+
+.humidity {
+  margin: 20px 0 20px 60px;
+}
+
+.wind-speed {
+  margin: 20px 60px 20px 0;
+}
+
+.wth-humi,
+.wth-wind {
+  padding: 10px;
+}
+
+h5.icon {
+  text-align: center;
+  font-size: 20px;
+}
+
+h6.characteristics {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.weather-detail {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.actual-icon {
+  font-size: 70px;
+  text-align: center;
+}
+
+.justification {
+  text-align: center;
+  font-size: 16px;
+  color: #999999;
+}
+
+.main-temperature {
+  text-align: center;
+}
+
+.actual-temp {
+  font-weight: 600;
+  font-size: 70px;
+  margin: 10px auto;
+}
+
+.convert-temp {
+  font-size: 20px;
+  position: relative;
+  top: -34px;
+}
+
+h2.real-temp-range {
+  text-align: center;
+  font-weight: 400;
+  font-size: 25px;
+  margin: 5px auto;
+}
+
+.forecasted-week-day,
+.forecasted-temp {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  background: #f6f6f6;
+}
+
+.forecasted-week-day {
+  margin: 40px auto 10px;
+}
+
+.forecasted-week-day .first-day,
+.forecasted-week-day .second-day,
+.forecasted-week-day .third-day,
+.forecasted-week-day .fourth-day,
+.forecasted-week-day .fifth-day {
+  text-align: center;
+  font-weight: 700;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.forecasted-temp {
+  margin: 10px auto 20px;
+  padding: 15px 0;
+}
+
+hr {
+  width: 30%;
+  margin: 0 auto;
+  background-color: black;
+}
+
+.weather-icon {
+  text-align: center;
+  font-size: 35px;
+}
+
+.forecasted-upper-temp,
+.forecasted-lower-temp {
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.temp-combination {
+  margin: 10px auto 0;
+}
