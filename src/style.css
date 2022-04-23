@@ -4,7 +4,7 @@ body {
 
 .container {
   display: block;
-  margin: 100px 0 auto;
+  margin: 100px auto 0 auto;
   padding: 20px 50px;
   max-width: 700px;
   border: 3px solid #999999;
