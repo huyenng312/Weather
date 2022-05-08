@@ -140,6 +140,15 @@ h6.characteristics {
   text-decoration: none;
 }
 
+.convert-temp .active {
+  color: black;
+  cursor: default;
+}
+
+.convert-temp .active:hover {
+  text-decoration: none;
+}
+
 h2.real-temp-range {
   text-align: center;
   font-weight: 400;
