@@ -136,6 +136,7 @@ h6.characteristics {
   font-size: 20px;
   position: relative;
   top: -34px;
+  text-decoration: none;
 }
 
 h2.real-temp-range {
@@ -195,6 +196,7 @@ hr {
 }
 
 .github-source {
+  font-size: 12px;
   display: block;
   margin: 0 auto 100px auto;
   padding: 20px 50px;
