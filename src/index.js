@@ -14,13 +14,7 @@ function formatHour(time) {
     minutes = "0".concat(minutes);
   }
 
-  let seconds = time.getSeconds();
-
-  if (seconds < 10) {
-    seconds = "0".concat(seconds);
-  }
-
-  let fullTime = `${hours}:${minutes}:${seconds}`;
+  let fullTime = `${hours}:${minutes}`;
 
   return fullTime;
 }
