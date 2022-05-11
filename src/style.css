@@ -202,7 +202,7 @@ hr {
 .github-source {
   font-size: 12px;
   display: block;
-  margin: 0 auto 100px auto;
-  padding: 20px 50px;
+  margin: 0 auto;
+  padding: 0px 50px;
   max-width: 700px;
 }
