@@ -5,8 +5,8 @@ body {
 .container {
   display: block;
   margin: 100px auto 0 auto;
-  padding: 20px 50px;
-  max-width: 700px;
+  padding: 15px 50px;
+  max-width: 850px;
   border: 3px solid #999999;
   background: linear-gradient(to top, #ffffff 0%, #cccccc 100%);
   border-radius: 10px;
@@ -16,7 +16,7 @@ body {
 #search-term {
   display: block;
   width: 100%;
-  margin: 20px auto;
+  margin: 15px auto;
   padding: 15px 0;
   border: 2px solid #777777;
   border-radius: 4px;
@@ -26,7 +26,7 @@ body {
 input.search-button,
 #current-button {
   width: 90%;
-  margin: 20px 0;
+  margin: 15px 0;
   padding: 3px;
   text-align: center;
   background: white;
@@ -156,29 +156,23 @@ h2.real-temp-range {
   margin: 5px auto;
 }
 
-.forecasted-week-day,
-.forecasted-temp {
+#week-day,
+#daily-temp {
   border: 1px solid #aaaaaa;
   border-radius: 4px;
+}
+
+#week-day {
   background: #f6f6f6;
-}
-
-.forecasted-week-day {
   margin: 40px auto 10px;
-}
-
-.forecasted-week-day .first-day,
-.forecasted-week-day .second-day,
-.forecasted-week-day .third-day,
-.forecasted-week-day .fourth-day,
-.forecasted-week-day .fifth-day {
   text-align: center;
   font-weight: 700;
   padding: 5px;
   font-size: 15px;
 }
 
-.forecasted-temp {
+#daily-temp {
+  background: #f6f6f6;
   margin: 10px auto 20px;
   padding: 15px 0;
 }
@@ -189,9 +183,10 @@ hr {
   background-color: black;
 }
 
-.weather-icon {
-  text-align: center;
-  font-size: 35px;
+#weather-icon {
+  display: block;
+  margin: 0 auto;
+  width: 75px;
 }
 
 .forecasted-upper-temp,

@@ -32,7 +32,6 @@ function formatDate(date) {
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
 
   let months = [
@@ -62,10 +61,78 @@ function formatDate(date) {
 let date = document.querySelector(".day");
 date.innerHTML = formatDate(realTime);
 
+function formatForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function capitalize(string) {
   string = string.trim();
   string = string.toLowerCase();
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let realUpperTemp = document.querySelector("#upper-temp");
+  let realLowerTemp = document.querySelector("#lower-temp");
+
+  realUpperTemp.innerHTML = `${Math.round(forecast[0].temp.max)}°`;
+  realLowerTemp.innerHTML = `${Math.round(forecast[0].temp.min)}°`;
+
+  //let forecastElement = document.querySelector("#forecast");
+  let forecastDayElement = document.querySelector("#week-day");
+  let forecastTempElement = document.querySelector("#daily-temp");
+
+  let forecastDayHTML = `<div class="row">`;
+  let forecastTempHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastWeekday, index) {
+    if ((index > 0) & (index < 7)) {
+      forecastDayHTML =
+        forecastDayHTML +
+        `<div class="col-2">
+          <div class="forecast-week-day">${formatForecastDate(
+            forecastWeekday.dt
+          )}</div>
+        </div>`;
+    }
+  });
+
+  forecast.forEach(function (forecastDailyTemp, index) {
+    if ((index > 0) & (index < 7)) {
+      forecastTempHTML =
+        forecastTempHTML +
+        `<div class="col-2">
+          <img src="http://openweathermap.org/img/wn/${
+            forecastDailyTemp.weather[0].icon
+          }@2x.png" alt="" id="weather-icon"/>
+          <div class="temp-combination">
+            <div class="forecasted-upper-temp">${Math.round(
+              forecastDailyTemp.temp.max
+            )}°</div>
+            <hr />
+            <div class="forecasted-lower-temp">${Math.round(
+              forecastDailyTemp.temp.min
+            )}°</div>
+          </div>
+        </div>
+      `;
+    }
+  });
+
+  forecastDayHTML = forecastDayHTML + `</div>`;
+  forecastDayElement.innerHTML = forecastDayHTML;
+  forecastTempHTML = forecastTempHTML + `</div>`;
+  forecastTempElement.innerHTML = forecastTempHTML;
+}
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 let apiKey = "e7ffbf355c2e98858999daa19a646cff";
@@ -90,14 +157,9 @@ function showCurrentWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
-}
 
-/* function showDailyWeather(response) {
-  let maxTemp = document.querySelector("#upper-temp");
-  maxTemp.innerHTML = `${Math.round(response.data.list.temp.max)}°`;
-  let minTemp = document.querySelector("#lower-temp");
-  minTemp.innerHTML = `${Math.round(response.data.list.temp.min)}°`;
-} */
+  getForecast(response.data.coord);
+}
 
 let initialUrl = `https://api.openweathermap.org/data/2.5/weather?q=hanoi&units=metric&appid=${apiKey}`;
 axios.get(initialUrl).then(showCurrentWeather);
@@ -153,3 +215,5 @@ celciusLink.addEventListener("click", celciusConvert);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", fahrenheitConvert);
+
+displayForecast();
