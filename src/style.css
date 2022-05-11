@@ -7,8 +7,8 @@ body {
   margin: 100px auto 0 auto;
   padding: 15px 50px;
   max-width: 850px;
-  border: 3px solid #999999;
-  background: linear-gradient(to top, #ffffff 0%, #cccccc 100%);
+  border: 3px solid #2c404a;
+  background: linear-gradient(to top, #ffffff 0%, #a6c2ff 100%);
   border-radius: 10px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
 }
@@ -18,7 +18,7 @@ body {
   width: 100%;
   margin: 15px auto;
   padding: 15px 0;
-  border: 2px solid #777777;
+  border: 2px solid #424d66;
   border-radius: 4px;
   height: 25px;
 }
@@ -29,8 +29,8 @@ input.search-button,
   margin: 15px 0;
   padding: 3px;
   text-align: center;
-  background: white;
-  border: 2px solid #777777;
+  background: #f6f8ff;
+  border: 2px solid #424d66;
   border-radius: 4px;
   transition: all 200ms ease-in-out;
 }
@@ -65,19 +65,19 @@ input.search-button,
 }
 
 .time {
-  color: #aaaaaa;
+  color: #212633;
 }
 
 .day {
-  color: #171717;
+  color: #212633;
 }
 
 .humidity,
 .wind-speed {
   display: block;
   padding: 0;
-  background: #f6f6f6;
-  border: 1px solid #aaaaaa;
+  background: #f6f8ff;
+  border: 1px solid #212633;
   border-radius: 10px;
 }
 
@@ -158,12 +158,12 @@ h2.real-temp-range {
 
 #week-day,
 #daily-temp {
-  border: 1px solid #aaaaaa;
+  border: 1px solid #212633;
   border-radius: 4px;
+  background: #f6f8ff;
 }
 
 #week-day {
-  background: #f6f6f6;
   margin: 40px auto 10px;
   text-align: center;
   font-weight: 700;
@@ -172,7 +172,6 @@ h2.real-temp-range {
 }
 
 #daily-temp {
-  background: #f6f6f6;
   margin: 10px auto 20px;
   padding: 15px 0;
 }
@@ -180,7 +179,7 @@ h2.real-temp-range {
 hr {
   width: 30%;
   margin: 0 auto;
-  background-color: black;
+  background-color: #212633;
 }
 
 #weather-icon {
